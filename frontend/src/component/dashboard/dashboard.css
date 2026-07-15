@@ -1,0 +1,886 @@
+/* ==========================
+   DASHBOARD CSS - PART 1
+=============================*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f6f8fa;
+}
+
+/* ==========================
+   DASHBOARD LAYOUT
+=============================*/
+
+#dashboard {
+  width: 100%;
+  min-height: calc(100vh - 70px);
+
+  display: grid;
+  grid-template-columns: 300px 1fr 320px;
+  gap: 25px;
+
+  padding: 25px;
+
+  background: #f6f8fa;
+}
+
+/* ==========================
+   SIDEBAR
+=============================*/
+
+aside {
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #d8dee4;
+
+  padding: 20px;
+
+  height: fit-content;
+
+  transition: .3s;
+}
+
+aside:hover {
+  box-shadow: 0 12px 25px rgba(0,0,0,.08);
+}
+
+/* Sidebar Heading */
+
+aside h3 {
+  color: #24292f;
+
+  font-size: 20px;
+
+  margin-bottom: 18px;
+
+  border-bottom: 1px solid #ececec;
+
+  padding-bottom: 12px;
+}
+
+/* ==========================
+   SUGGESTED REPOSITORY CARD
+=============================*/
+
+aside > div {
+  border: 1px solid #d0d7de;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  margin-bottom: 15px;
+
+  transition: .25s;
+
+  cursor: pointer;
+}
+
+aside > div:hover {
+
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 18px rgba(0,0,0,.08);
+
+  border-color: #0969da;
+
+}
+
+/* Repository Name */
+
+aside > div h4:first-child{
+
+    color:#0969da;
+
+    font-size:17px;
+
+    margin-bottom:8px;
+}
+
+/* Repository Description */
+
+aside > div h4:last-child{
+
+    color:#57606a;
+
+    font-size:14px;
+
+    font-weight:400;
+
+}
+
+/* ==========================
+   MAIN SECTION
+=============================*/
+
+main{
+
+    background:white;
+
+    border-radius:14px;
+
+    border:1px solid #d8dee4;
+
+    padding:30px;
+
+}
+
+/* Heading */
+
+main h2{
+
+    color:#24292f;
+
+    margin-bottom:20px;
+
+}
+
+/* ==========================
+   SEARCH
+=============================*/
+
+#search{
+
+    margin-bottom:30px;
+
+}
+
+#search input{
+
+    width:100%;
+
+    padding:14px 18px;
+
+    border-radius:10px;
+
+    border:1px solid #d0d7de;
+
+    outline:none;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+#search input:focus{
+
+    border-color:#0969da;
+
+    box-shadow:0 0 0 4px rgba(9,105,218,.15);
+
+}
+
+/* ==========================
+   REPOSITORY CARD
+=============================*/
+
+main > div:not(#search){
+
+    background:white;
+
+    border:1px solid #d8dee4;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    margin-bottom:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+main > div:not(#search):hover{
+
+    transform:translateY(-5px);
+
+    border-color:#0969da;
+
+    box-shadow:0 14px 24px rgba(0,0,0,.08);
+
+}
+
+/* Repo Name */
+
+main > div h4:first-child{
+
+    color:#0969da;
+
+    font-size:20px;
+
+}
+
+/* Repo Description */
+
+main > div h4:last-child{
+
+    color:#57606a;
+
+    margin-top:10px;
+
+    font-size:15px;
+
+    font-weight:400;
+
+}
+
+/* ==========================
+   RIGHT SIDEBAR EVENTS
+=============================*/
+
+aside ul{
+
+    list-style:none;
+
+}
+
+aside li{
+
+    border:1px solid #d8dee4;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    margin-bottom:15px;
+
+    transition:.25s;
+
+}
+
+aside li:hover{
+
+    background:#f6f8fa;
+
+    border-color:#2da44e;
+
+}
+
+aside li p{
+
+    color:#24292f;
+
+    font-size:15px;
+
+}
+
+/* ==========================
+   SCROLLBAR
+=============================*/
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#c4c4c4;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#888;
+}
+
+/* =========================================
+   DASHBOARD CSS - PART 2
+=========================================*/
+
+/* Smooth animations */
+
+aside,
+main,
+aside > div,
+main > div:not(#search),
+aside li,
+#search input {
+  transition: all 0.25s ease;
+}
+
+/* Nice text selection */
+
+::selection {
+  background: #0969da;
+  color: white;
+}
+
+/* Card hover glow */
+
+main > div:not(#search):hover,
+aside > div:hover {
+  background: #ffffff;
+}
+
+/* Sidebar spacing */
+
+aside > div:last-child {
+  margin-bottom: 0;
+}
+
+/* Event cards */
+
+aside li {
+  display: flex;
+  align-items: center;
+  min-height: 65px;
+}
+
+aside li::before {
+  content: "📅";
+  font-size: 20px;
+  margin-right: 12px;
+}
+
+/* Repository description */
+
+main h4 {
+  line-height: 1.5;
+}
+
+/* Better repository card spacing */
+
+main > div:not(#search) {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Left blue bar animation */
+
+main > div:not(#search)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: #0969da;
+
+  transform: scaleY(0);
+
+  transition: .25s;
+}
+
+main > div:not(#search):hover::before {
+  transform: scaleY(1);
+}
+
+/* Suggested Repository animation */
+
+aside > div {
+  position: relative;
+  overflow: hidden;
+}
+
+aside > div::after {
+
+  content: "";
+
+  position: absolute;
+
+  left: -100%;
+
+  top: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.4),
+      transparent
+  );
+
+  transition: .6s;
+}
+
+aside > div:hover::after {
+  left: 120%;
+}
+
+/* Search placeholder */
+
+#search input::placeholder {
+  color: #8c959f;
+}
+
+/* Search hover */
+
+#search input:hover {
+  border-color: #0969da;
+}
+
+/* Better heading */
+
+main h2,
+aside h3 {
+  letter-spacing: .4px;
+}
+
+/* Soft gradient */
+
+body {
+
+  background:
+  linear-gradient(
+      to bottom,
+      #f6f8fa,
+      #eef2f6
+  );
+
+}
+
+/* Nice border radius */
+
+aside,
+main {
+
+  border-radius:16px;
+
+}
+
+/* Better shadows */
+
+main{
+
+box-shadow:
+0 5px 20px rgba(0,0,0,.04);
+
+}
+
+aside{
+
+box-shadow:
+0 4px 15px rgba(0,0,0,.04);
+
+}
+
+/* Hover shadow */
+
+main:hover{
+
+box-shadow:
+0 12px 30px rgba(0,0,0,.06);
+
+}
+
+/* Better paragraph */
+
+p{
+
+line-height:1.6;
+
+}
+
+/* Mobile */
+
+@media(max-width:1200px){
+
+#dashboard{
+
+grid-template-columns:
+250px 1fr;
+
+}
+
+#dashboard aside:last-child{
+
+display:none;
+
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:900px){
+
+#dashboard{
+
+grid-template-columns:1fr;
+
+}
+
+aside{
+
+position:static;
+
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:600px){
+
+#dashboard{
+
+padding:15px;
+
+gap:15px;
+
+}
+
+main{
+
+padding:18px;
+
+}
+
+aside{
+
+padding:18px;
+
+}
+
+main h2{
+
+font-size:22px;
+
+}
+
+aside h3{
+
+font-size:18px;
+
+}
+
+#search input{
+
+padding:12px;
+
+}
+
+}
+
+/* Scroll Animation */
+
+main > div:not(#search){
+
+animation:fadeUp .4s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(15px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Floating animation */
+
+aside:hover{
+
+transform:translateY(-3px);
+
+}
+
+main:hover{
+
+transform:translateY(-2px);
+
+}
+
+/* Github colors */
+
+.blue{
+color:#0969da;
+}
+
+.green{
+color:#2da44e;
+}
+
+.gray{
+color:#57606a;
+}
+
+.red{
+color:#cf222e;
+}
+
+
+
+
+
+
+
+.left-sidebar{
+    width:280px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.profile-card{
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:15px;
+    padding:25px;
+    text-align:center;
+}
+
+.profile-avatar{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #2ea043;
+    margin-bottom:20px;
+}
+
+.profile-card h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+.profile-card h3{
+    color:#8b949e;
+    margin-bottom:20px;
+}
+
+.create-btn{
+    width:100%;
+    padding:12px;
+    background:#238636;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+}
+
+.create-btn:hover{
+    background:#2ea043;
+}
+
+.dashboard-menu{
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:15px;
+    padding:20px;
+}
+
+.dashboard-menu h4{
+    color:white;
+    margin-bottom:15px;
+}
+
+.menu-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px;
+    margin-bottom:8px;
+    border-radius:8px;
+    color:#c9d1d9;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.menu-item:hover{
+    background:#21262d;
+}
+
+.menu-item p{
+    flex:1;
+    margin-left:15px;
+}
+
+.quick-actions{
+    background:#161b22;
+    border:1px solid #30363d;
+    border-radius:15px;
+    padding:20px;
+}
+
+.quick-actions h4{
+    color:white;
+    margin-bottom:15px;
+}
+
+.quick-actions button{
+    width:100%;
+    margin-bottom:12px;
+    padding:12px;
+    background:#21262d;
+    color:white;
+    border:1px solid #30363d;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.quick-actions button:hover{
+    background:#30363d;
+}
+
+
+.center-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo-header h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.repo-header p {
+    color: #8b949e;
+}
+
+.new-repo-btn {
+    background: #238636;
+    color: white;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.new-repo-btn:hover {
+    background: #2ea043;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+}
+
+.search-box input:focus {
+    outline: none;
+    border-color: #58a6ff;
+}
+
+.repository-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.repository-card:hover {
+    transform: translateY(-2px);
+    border-color: #58a6ff;
+}
+
+.repo-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo-top h3 {
+    color: #58a6ff;
+    margin-bottom: 10px;
+}
+
+.public-badge,
+.private-badge {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.public-badge {
+    background: #1f6feb;
+    color: white;
+}
+
+.private-badge {
+    background: #6e7681;
+    color: white;
+}
+
+.repo-description {
+    margin: 15px 0;
+    color: #c9d1d9;
+}
+
+.repo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.repo-info {
+    display: flex;
+    gap: 25px;
+    color: #8b949e;
+}
+
+.repo-actions button,
+.view-btn {
+    background: transparent;
+    border: 1px solid #30363d;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.repo-actions button:hover,
+.view-btn:hover {
+    background: #21262d;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 60px;
+    border: 2px dashed #30363d;
+    border-radius: 12px;
+    color: #8b949e;
+}
+
+

@@ -1,0 +1,89 @@
+.create-page{
+    min-height:100vh;
+    background:#0d1117;
+    display:flex;
+    justify-content:center;
+    padding:50px;
+}
+
+.create-card{
+    width:700px;
+    background:#161b22;
+    padding:40px;
+    border-radius:12px;
+    border:1px solid #30363d;
+}
+
+.create-card h1{
+    color:white;
+}
+
+.create-card p{
+    color:#8b949e;
+    margin-bottom:30px;
+}
+
+.create-card form{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.create-card label{
+    color:white;
+    font-weight:600;
+}
+
+.create-card input,
+.create-card textarea{
+
+    background:#0d1117;
+    color:white;
+    border:1px solid #30363d;
+    border-radius:8px;
+    padding:12px;
+    font-size:15px;
+
+}
+
+.create-card textarea{
+
+    min-height:140px;
+    resize:vertical;
+
+}
+
+.visibility{
+
+    display:flex;
+    gap:30px;
+
+}
+
+.visibility label{
+
+    display:flex;
+    gap:8px;
+    align-items:center;
+
+}
+
+.create-button{
+
+    margin-top:20px;
+    padding:12px;
+    background:#238636;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:bold;
+
+}
+
+.create-button:hover{
+
+    background:#2ea043;
+
+}

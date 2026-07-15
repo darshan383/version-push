@@ -1,0 +1,156 @@
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  border-bottom: 2px solid white;
+}
+
+nav img {
+  height: 50px;
+  border-radius: 100%;
+}
+nav div {
+  display: flex;
+}
+
+nav h3 {
+  margin-left: 15px;
+  color: white;
+}
+
+nav p {
+  margin-left: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+nav h3:hover,
+nav p:hover {
+  text-decoration: underline;
+} */
+
+
+
+
+
+/* navbar.css */
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  height: 64px;
+  background: #24292f;
+  border-bottom: 1px solid #30363d;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 32px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Remove default Link styling */
+
+nav a {
+  text-decoration: none;
+}
+
+/* Left Side */
+
+nav > a > div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+nav img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+nav img:hover {
+  opacity: 0.8;
+}
+
+nav h3 {
+  color: white;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Right Side */
+
+nav > div {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+nav p {
+  margin: 0;
+  color: #f0f6fc;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.25s;
+  cursor: pointer;
+}
+
+nav p:hover {
+  color: #58a6ff;
+}
+
+/* Create Repository Button */
+
+nav > div a:first-child p {
+  background: #2da44e;
+  padding: 9px 18px;
+  border-radius: 6px;
+  color: white;
+}
+
+nav > div a:first-child p:hover {
+  background: #218b3a;
+  color: white;
+}
+
+/* Profile Link */
+
+nav > div a:last-child p {
+  padding: 9px 0;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  nav {
+    padding: 0 16px;
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  nav > div {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav h3 {
+    font-size: 20px;
+  }
+
+  nav p {
+    font-size: 14px;
+  }
+}
